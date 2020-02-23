@@ -1,4 +1,4 @@
-package edu.uci.ics.UCNETID.service.gateway.configs;
+package edu.uci.ics.dtablac.service.gateway.configs;
 
 import java.util.Map;
 

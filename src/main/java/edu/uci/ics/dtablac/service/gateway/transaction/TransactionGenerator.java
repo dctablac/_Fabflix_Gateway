@@ -1,4 +1,4 @@
-package edu.uci.ics.UCNETID.service.gateway.transaction;
+package edu.uci.ics.dtablac.service.gateway.transaction;
 
 import org.apache.commons.codec.binary.Hex;
 
