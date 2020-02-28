@@ -3,8 +3,10 @@ package edu.uci.ics.dtablac.service.gateway.connectionpool;
 import com.zaxxer.hikari.HikariConfig;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import com.zaxxer.hikari.HikariDataSource;
+import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
 
 public class ConnectionPoolManager
 {
@@ -59,11 +61,27 @@ public class ConnectionPoolManager
     public Connection requestCon()
     {
         // TODO request connections from hikariConPool
+        try {
+            return this.hikariConPool.getConnection();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Could not request a connection.");
+        }
         return null;
     }
 
     public void releaseCon(Connection con)
     {
+        this.hikariConPool.evictConnection(con);
         // TODO release connections back to hikariConPool
+        /*try {
+            ServiceLogger.LOGGER.info("Releasing a connection back to the pool.");
+            this.hikariConPool.evictConnection(con);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Could not release the connection.");
+        }*/
     }
 }

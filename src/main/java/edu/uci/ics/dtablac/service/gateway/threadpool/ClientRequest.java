@@ -1,5 +1,7 @@
 package edu.uci.ics.dtablac.service.gateway.threadpool;
 
+import javax.ws.rs.core.UriInfo;
+
 public class ClientRequest
 {
     /* User Information */
@@ -11,6 +13,7 @@ public class ClientRequest
     private String URI;
     private String endpoint;
     private HTTPMethod method;
+    private UriInfo uri_info;
 
     /*
      * So before when we wanted to get the request body
@@ -44,10 +47,48 @@ public class ClientRequest
      *     }
      *
      */
-    private byte[] requestBytes;
+    private byte[] requestBytes; // TODO
 
-    public ClientRequest()
+    public ClientRequest(String newEmail, String newSession_id, String newTransaction_id,
+                         String newURI, String newEndpoint, HTTPMethod newMethod, UriInfo uri_info, byte[] newRequestBytes)
     {
+        this.email = newEmail;
+        this.session_id = newSession_id;
+        this.transaction_id = newTransaction_id;
+        this.URI = newURI;
+        this.endpoint = newEndpoint;
+        this.method = newMethod;
+        this.uri_info = uri_info;
+        this.requestBytes = newRequestBytes;
+    }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getSession_id() {
+        return this.session_id;
+    }
+
+    public String getTransaction_id() {
+        return this.transaction_id;
+    }
+
+    public String getURI() {
+        return this.URI;
+    }
+
+    public String getEndpoint() {
+        return this.endpoint;
+    }
+
+    public HTTPMethod getMethod() {
+        return this.method;
+    }
+
+    public UriInfo getUri_info() { return this.uri_info; };
+
+    public byte[] getRequestBytes() {
+        return this.requestBytes;
     }
 }

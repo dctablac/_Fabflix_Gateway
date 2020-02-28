@@ -59,7 +59,6 @@ public class GatewayService {
                 serviceConfigs.getDbPassword(),
                 threadConfigs.getNumThreads());
 
-
         threadPool = ThreadPool.createThreadPool(threadConfigs.getNumThreads());
 
         // Initialize HTTP sever

@@ -1,5 +1,8 @@
 package edu.uci.ics.dtablac.service.gateway.threadpool;
 
+import edu.uci.ics.dtablac.service.gateway.GatewayService;
+import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
+
 import java.util.ArrayList;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -28,6 +31,11 @@ public class ThreadPool
         queue = new LinkedBlockingQueue<>();
 
         // TODO more work is needed to create the threads
+        for (int i = 0; i < numWorkers; i++) {
+            Worker worker = Worker.CreateWorker(i, this);
+            worker.start();
+            workers.add(worker);
+        }
     }
 
     public static ThreadPool createThreadPool(int numWorkers)
@@ -46,12 +54,26 @@ public class ThreadPool
     ClientRequest takeRequest()
     {
         // TODO *take* the request from the queue
+        try {
+            return this.queue.take();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Failed to take the request from the queue.");
+        }
         return null;
     }
 
-    public void putRequest()
+    public void putRequest(ClientRequest clientRequest)
     {
         // TODO *put* the request into the queue
+        try {
+            this.queue.put(clientRequest);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Failed to put the request into the queue.");
+        }
     }
 
 }
