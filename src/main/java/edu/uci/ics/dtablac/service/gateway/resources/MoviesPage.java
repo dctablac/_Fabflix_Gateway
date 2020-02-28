@@ -1,9 +1,7 @@
 package edu.uci.ics.dtablac.service.gateway.resources;
 
 import edu.uci.ics.dtablac.service.gateway.GatewayService;
-import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
 import edu.uci.ics.dtablac.service.gateway.util.movies;
-import edu.uci.ics.dtablac.service.gateway.util.utility;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
@@ -15,28 +13,21 @@ public class MoviesPage {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response search(@Context HttpHeaders headers, @Context UriInfo uri_info) {
-        // Validate session
-        Response response = utility.sendSessionVerification(headers);
-        if (response != null) {
-            return response;
-        }
         return movies.callMovies(GatewayService.getMoviesConfigs().getSearchPath(), headers, uri_info);
     }
 
-    @Path("browse/{phrase}")
+    @Path("browse/{phrase: .*}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response browse(@Context HttpHeaders headers) {
-        // call browse
-        return null;
+    public Response browse(@Context HttpHeaders headers, @Context UriInfo uri_info) {
+        return movies.callMovies(GatewayService.getMoviesConfigs().getBrowsePath(), headers, uri_info);
     }
 
-    @Path("get/{movie_id}")
+    @Path("get/{movie_id: .*}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getMovieId(@Context HttpHeaders headers) {
-
-        return null;
+    public Response getMovieId(@Context HttpHeaders headers, @Context UriInfo uri_info) {
+        return movies.callMovies(GatewayService.getMoviesConfigs().getGetPath(), headers, uri_info);
     }
 
     @Path("thumbnail")
@@ -44,32 +35,27 @@ public class MoviesPage {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response thumbnail(@Context HttpHeaders headers, byte[] jsonString) {
-        // call thumbnail
-        return null;
+        return movies.callThumbnail(GatewayService.getMoviesConfigs().getThumbnailPath(), headers, jsonString);
     }
 
-    @Path("people/get/{person_id}")
+    @Path("people/get/{person_id: .*}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPersonId(@Context HttpHeaders headers) {
-        // call get/person_id
-        return null;
+    public Response getPersonId(@Context HttpHeaders headers, @Context UriInfo uri_info) {
+        return movies.callMovies(GatewayService.getMoviesConfigs().getPeopleGetPath(), headers, uri_info);
     }
 
     @Path("people/search")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response peopleSearch(@Context HttpHeaders headers) {
-        // call people/search
-        return null;
+    public Response peopleSearch(@Context HttpHeaders headers, @Context UriInfo uri_info) {
+        return movies.callMovies(GatewayService.getMoviesConfigs().getPeopleSearchPath(), headers, uri_info);
     }
 
     @Path("people")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response people(@Context HttpHeaders headers) {
-
-        // call people
-        return null;
+    public Response people(@Context HttpHeaders headers, @Context UriInfo uri_info) {
+        return movies.callMovies(GatewayService.getMoviesConfigs().getPeoplePath(), headers, uri_info);
     }
 }

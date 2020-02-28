@@ -34,7 +34,7 @@ public class idm {
             ClientRequest request = new ClientRequest(EMAIL, SESSION_ID, TRANSACTION_ID,
                     servicePath, endpointPath, HTTPMethod.POST, null , jsonBytes);
 
-            GatewayService.getThreadPool().putRequest(request); // TODO: This is not being added to the queue.
+            GatewayService.getThreadPool().putRequest(request);
 
             ServiceLogger.LOGGER.info("Request added to queue.");
 

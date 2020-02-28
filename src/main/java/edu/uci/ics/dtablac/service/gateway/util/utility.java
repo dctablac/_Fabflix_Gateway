@@ -126,6 +126,9 @@ public class utility {
         // Send the request
         ServiceLogger.LOGGER.info("Sending request...");
         Response response = invocationBuilder.post(Entity.entity(jsonBytes, MediaType.APPLICATION_JSON));
+        invocationBuilder.header("email", EMAIL);
+        invocationBuilder.header("session_id", SESSION_ID);
+        invocationBuilder.header("transaction_id", TRANSACTION_ID);
         ServiceLogger.LOGGER.info("Request sent.");
 
         ServiceLogger.LOGGER.info("Received status " + response.getStatus());
@@ -146,9 +149,11 @@ public class utility {
         // Get query params and path params
         MultivaluedMap<String, String> pathParams = uri_info.getPathParameters();
         Set<String> pathParamKeys = pathParams.keySet();
+        Object[] finalPathParamKeys = pathParamKeys.toArray();
 
         MultivaluedMap<String, String> queryParams = uri_info.getQueryParameters();
         Set<String> queryParamKeys = queryParams.keySet();
+        Object[] finalQueryParamKeys = queryParamKeys.toArray();
 
         // Create a new client
         ServiceLogger.LOGGER.info("Building client...");
@@ -159,18 +164,28 @@ public class utility {
         ServiceLogger.LOGGER.info("Building WebTarget...");
         WebTarget webTarget = client.target(servicePath).path(endpointPath);
 
+        // Add path params
+        int pathCount = pathParamKeys.size();
+        for (int i = 0; i < pathCount; i++) {
+            String key = (String)finalPathParamKeys[i];
+            String value = pathParams.get(key).get(0);
+            webTarget = webTarget.path(value);
+        }
+
         // Add query params
-        queryParamKeys.forEach(x -> webTarget.queryParam(x, queryParams.get(x).get(0)));
-
-        // Add path params                                                  // Might be incorrect to get path param
-        pathParamKeys.forEach(x -> webTarget.path(pathParams.get(x).get(0))); // This might not be storing the new webTarget
-
-        // test print webtarget
-        System.out.println(webTarget.getUri().toString());
+        int queryCount = queryParamKeys.size();
+        for (int i = 0; i < queryCount; i++) {
+            String key = (String)finalQueryParamKeys[i];
+            String value = queryParams.get(key).get(0);
+            webTarget = webTarget.queryParam(key, value);
+        }
 
         // Create an InvocationBuilder to create the HTTP request (bundle request)
         ServiceLogger.LOGGER.info("Starting invocation builder...");
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+        invocationBuilder.header("email", EMAIL);
+        invocationBuilder.header("session_id", SESSION_ID);
+        invocationBuilder.header("transaction_id", TRANSACTION_ID);
 
         // Send the request
         ServiceLogger.LOGGER.info("Sending request...");

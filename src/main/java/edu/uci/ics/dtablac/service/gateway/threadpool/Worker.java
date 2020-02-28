@@ -46,6 +46,7 @@ public class Worker extends Thread {
 
             // Release the connection
             pool.releaseCon(this.connection);
+            ServiceLogger.LOGGER.info("Releasing connection");
         }
     }
 

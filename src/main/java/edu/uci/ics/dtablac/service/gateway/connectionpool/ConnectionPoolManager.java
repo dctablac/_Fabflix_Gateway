@@ -71,15 +71,13 @@ public class ConnectionPoolManager
         return null;
     }
 
-    public void releaseCon(Connection con)
-    {
+    public void releaseCon(Connection con) {
         this.hikariConPool.evictConnection(con);
         // TODO release connections back to hikariConPool
         /*try {
             ServiceLogger.LOGGER.info("Releasing a connection back to the pool.");
-            this.hikariConPool.evictConnection(con);
-        }
-        catch (SQLException e) {
+            con.close();
+        } catch (SQLException e) {
             e.printStackTrace();
             ServiceLogger.LOGGER.warning("Could not release the connection.");
         }*/
