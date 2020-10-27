@@ -1,0 +1,805 @@
+[2020/09/11 20:39:21][CONFIG][initService]  Starting service...
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Scheme: http://
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Port: 12345
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Path: /api/g
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database hostname: localhost
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database port: 3306
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database username: root
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database password provided? true
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database name: fabflix_gateway
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  IDM Scheme: http://
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  IDM Hostname: 0.0.0.0
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  IDM Port: 12346
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  IDM Path: /api/idm
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  IDM Endpoints: 
+	/register
+	/login
+	/session
+	/privilege
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Movies Scheme: http://
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Movies Hostname: 0.0.0.0
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Movies Port: 12347
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Movies Path: /api/movies
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Movies Endpoints: 
+	/search
+	/browse/
+	/get/
+	/thumbnail
+	/people
+	/people/search
+	/people/get/
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Billing Scheme: http://
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Billing Hostname: 0.0.0.0
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Billing Port: 12348
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Billing Path: /api/billing
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Billing Endpoints: 
+	/cart/insert
+	/cart/update
+	/cart/delete
+	/cart/retrieve
+	/cart/clear
+	/order/place
+	/order/retrieve
+	/order/complete
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Number of Threads: 10
+[2020/09/11 20:39:21][CONFIG][currentConfigs]  Request Delay: 5
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Building URI from configs...
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:12345/api/g
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Set Jersey resources.
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2020/09/11 20:39:22][CONFIG][initHTTPServer]  Starting HTTP server...
+[2020/09/11 20:39:23][CONFIG][initHTTPServer]  HTTP server started.
+[2020/09/11 20:39:23][CONFIG][initService]  Service initialized.
+[2020/09/11 20:39:25][INFO][callIdm]  Request added to queue.
+[2020/09/11 20:39:25][INFO][handleRequest]  Worker is handling email: null
+[2020/09/11 20:39:25][INFO][handleRequest]  Worker is handling sesh_id: [object Object]
+[2020/09/11 20:39:25][WARNING][POSTRequest]  THIS GUY HAS EMAILnull
+[2020/09/11 20:39:25][INFO][POSTRequest]  Building client...
+[2020/09/11 20:39:25][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:39:25][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:39:25][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:39:25][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:39:25][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:39:25][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:39:25][INFO][process]  Handling the next request.
+[2020/09/11 20:39:25][INFO][process]  Email in the process: null
+[2020/09/11 20:39:25][INFO][process]  Connection released.
+[2020/09/11 20:39:26][INFO][report]  Database has session id: [object Object]
+[2020/09/11 20:39:26][INFO][report]  Response was found.
+[2020/09/11 20:39:26][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:39:30][INFO][callIdm]  Request added to queue.
+[2020/09/11 20:39:30][INFO][handleRequest]  Worker is handling email: null
+[2020/09/11 20:39:30][INFO][handleRequest]  Worker is handling sesh_id: [object Object]
+[2020/09/11 20:39:30][WARNING][POSTRequest]  THIS GUY HAS EMAILnull
+[2020/09/11 20:39:30][INFO][POSTRequest]  Building client...
+[2020/09/11 20:39:30][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:39:30][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:39:30][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:39:30][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:39:30][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:39:30][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:39:30][INFO][process]  Handling the next request.
+[2020/09/11 20:39:30][INFO][process]  Email in the process: null
+[2020/09/11 20:39:30][INFO][process]  Connection released.
+[2020/09/11 20:39:30][INFO][report]  Database has session id: [object Object]
+[2020/09/11 20:39:30][INFO][report]  Response was found.
+[2020/09/11 20:39:30][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:39:50][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:39:50][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:39:50][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:39:50][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:39:50][WARNING][sendSessionVerification]  dctablac@gmail.com  8dad1c5938a771c9868472342d4b0cf685b1c94fd961a6cb03636636f195aab2aa3bd0723aa773739201698e1f9b120dca84e7403678419251b9c7322e9637e6
+[2020/09/11 20:39:50][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:39:50][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:39:50][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:39:50][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"221788e7fae7f4faa93b4b406b0be0fbb1ede6a77c3e51615efe7e9321aa86f4a19181b84e513a7236890b6c010259d1e775c5655ad205be4a1eee3bd02a9c99"}
+[2020/09/11 20:39:50][WARNING][callMovies]  OK
+[2020/09/11 20:39:50][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:39:50][WARNING][callMovies]  Success
+[2020/09/11 20:39:50][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:39:50][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:39:50][INFO][handleRequest]  Worker is handling sesh_id: 221788e7fae7f4faa93b4b406b0be0fbb1ede6a77c3e51615efe7e9321aa86f4a19181b84e513a7236890b6c010259d1e775c5655ad205be4a1eee3bd02a9c99
+[2020/09/11 20:39:50][INFO][GETRequest]  Building client...
+[2020/09/11 20:39:50][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:39:50][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:39:50][INFO][GETRequest]  Sending request...
+[2020/09/11 20:39:50][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:39:50][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:39:50][INFO][GETRequest]  Request sent.
+[2020/09/11 20:39:50][INFO][GETRequest]  Received status 200
+[2020/09/11 20:39:50][INFO][process]  Handling the next request.
+[2020/09/11 20:39:50][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:39:50][INFO][process]  Connection released.
+[2020/09/11 20:39:51][INFO][report]  Database has session id: 221788e7fae7f4faa93b4b406b0be0fbb1ede6a77c3e51615efe7e9321aa86f4a19181b84e513a7236890b6c010259d1e775c5655ad205be4a1eee3bd02a9c99
+[2020/09/11 20:39:51][INFO][report]  Response was found.
+[2020/09/11 20:39:51][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:39:58][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:39:58][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:39:58][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:39:58][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:39:58][WARNING][sendSessionVerification]  dctablac@gmail.com  221788e7fae7f4faa93b4b406b0be0fbb1ede6a77c3e51615efe7e9321aa86f4a19181b84e513a7236890b6c010259d1e775c5655ad205be4a1eee3bd02a9c99
+[2020/09/11 20:39:58][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:39:59][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:39:59][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:39:59][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"e0615095ee15735257b2bf0cd293c4b3f63894d55a243c8a7ac74df741543927c76259e4f47ad7cd1f462436ffd724413819f2058ba54f3378744deb3b42ee10"}
+[2020/09/11 20:39:59][WARNING][callMovies]  OK
+[2020/09/11 20:39:59][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:39:59][WARNING][callMovies]  Success
+[2020/09/11 20:39:59][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:39:59][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:39:59][INFO][handleRequest]  Worker is handling sesh_id: e0615095ee15735257b2bf0cd293c4b3f63894d55a243c8a7ac74df741543927c76259e4f47ad7cd1f462436ffd724413819f2058ba54f3378744deb3b42ee10
+[2020/09/11 20:39:59][INFO][GETRequest]  Building client...
+[2020/09/11 20:39:59][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:39:59][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:39:59][INFO][GETRequest]  Sending request...
+[2020/09/11 20:39:59][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:39:59][INFO][GETRequest]  Request sent.
+[2020/09/11 20:39:59][INFO][GETRequest]  Received status 200
+[2020/09/11 20:39:59][INFO][process]  Handling the next request.
+[2020/09/11 20:39:59][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:39:59][INFO][process]  Connection released.
+[2020/09/11 20:39:59][INFO][report]  Database has session id: e0615095ee15735257b2bf0cd293c4b3f63894d55a243c8a7ac74df741543927c76259e4f47ad7cd1f462436ffd724413819f2058ba54f3378744deb3b42ee10
+[2020/09/11 20:39:59][INFO][report]  Response was found.
+[2020/09/11 20:39:59][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:40:07][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:40:07][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:40:07][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:40:07][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:40:07][WARNING][sendSessionVerification]  dctablac@gmail.com  e0615095ee15735257b2bf0cd293c4b3f63894d55a243c8a7ac74df741543927c76259e4f47ad7cd1f462436ffd724413819f2058ba54f3378744deb3b42ee10
+[2020/09/11 20:40:07][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:40:07][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:40:07][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:40:07][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"a651f8ff18088058f0626c2503938971f0ad0331a9f88493cfe60dd553ccf4f2b7caa139ab83e9a2d2b32c5e7281b0d09ddb3537d559a90f1505a063c5378947"}
+[2020/09/11 20:40:07][WARNING][callMovies]  OK
+[2020/09/11 20:40:07][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:40:07][WARNING][callMovies]  Success
+[2020/09/11 20:40:07][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:40:07][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:40:07][INFO][handleRequest]  Worker is handling sesh_id: a651f8ff18088058f0626c2503938971f0ad0331a9f88493cfe60dd553ccf4f2b7caa139ab83e9a2d2b32c5e7281b0d09ddb3537d559a90f1505a063c5378947
+[2020/09/11 20:40:07][INFO][GETRequest]  Building client...
+[2020/09/11 20:40:07][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:40:07][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:40:07][INFO][GETRequest]  Sending request...
+[2020/09/11 20:40:07][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:40:07][INFO][GETRequest]  Request sent.
+[2020/09/11 20:40:07][INFO][GETRequest]  Received status 200
+[2020/09/11 20:40:07][INFO][process]  Handling the next request.
+[2020/09/11 20:40:07][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:40:07][INFO][process]  Connection released.
+[2020/09/11 20:40:07][INFO][report]  Database has session id: a651f8ff18088058f0626c2503938971f0ad0331a9f88493cfe60dd553ccf4f2b7caa139ab83e9a2d2b32c5e7281b0d09ddb3537d559a90f1505a063c5378947
+[2020/09/11 20:40:07][INFO][report]  Response was found.
+[2020/09/11 20:40:07][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:40:24][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:40:24][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:40:24][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:40:24][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:40:24][WARNING][sendSessionVerification]  dctablac@gmail.com  a651f8ff18088058f0626c2503938971f0ad0331a9f88493cfe60dd553ccf4f2b7caa139ab83e9a2d2b32c5e7281b0d09ddb3537d559a90f1505a063c5378947
+[2020/09/11 20:40:24][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:40:25][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:40:25][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:40:25][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"ded1441b4eb2dafeb494b8c783ed734d8d87e10be77b27970a80b45fbc112d075ff7bc0943d86b9b783602867bea847b8769ffb496f1156fca7b67cc6b7ef429"}
+[2020/09/11 20:40:25][WARNING][callMovies]  OK
+[2020/09/11 20:40:25][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:40:25][WARNING][callMovies]  Success
+[2020/09/11 20:40:25][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:40:25][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:40:25][INFO][handleRequest]  Worker is handling sesh_id: ded1441b4eb2dafeb494b8c783ed734d8d87e10be77b27970a80b45fbc112d075ff7bc0943d86b9b783602867bea847b8769ffb496f1156fca7b67cc6b7ef429
+[2020/09/11 20:40:25][INFO][GETRequest]  Building client...
+[2020/09/11 20:40:25][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:40:25][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:40:25][INFO][GETRequest]  Sending request...
+[2020/09/11 20:40:25][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:40:25][INFO][GETRequest]  Request sent.
+[2020/09/11 20:40:25][INFO][GETRequest]  Received status 200
+[2020/09/11 20:40:25][INFO][process]  Handling the next request.
+[2020/09/11 20:40:25][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:40:25][INFO][process]  Connection released.
+[2020/09/11 20:40:25][INFO][report]  Database has session id: ded1441b4eb2dafeb494b8c783ed734d8d87e10be77b27970a80b45fbc112d075ff7bc0943d86b9b783602867bea847b8769ffb496f1156fca7b67cc6b7ef429
+[2020/09/11 20:40:25][INFO][report]  Response was found.
+[2020/09/11 20:40:25][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:40:33][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:40:33][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:40:33][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:40:33][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:40:33][WARNING][sendSessionVerification]  dctablac@gmail.com  ded1441b4eb2dafeb494b8c783ed734d8d87e10be77b27970a80b45fbc112d075ff7bc0943d86b9b783602867bea847b8769ffb496f1156fca7b67cc6b7ef429
+[2020/09/11 20:40:33][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:40:33][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:40:33][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:40:33][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"198d1983fd6d529f91cae69a211a40557b97dcd96af695ecb11790917dbcb8063a1cd3b0ee27228a9081cf40c86a1528604db3d966efc8a04d744f4e040344bf"}
+[2020/09/11 20:40:33][WARNING][callMovies]  OK
+[2020/09/11 20:40:33][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:40:33][WARNING][callMovies]  Success
+[2020/09/11 20:40:33][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:40:33][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:40:33][INFO][handleRequest]  Worker is handling sesh_id: 198d1983fd6d529f91cae69a211a40557b97dcd96af695ecb11790917dbcb8063a1cd3b0ee27228a9081cf40c86a1528604db3d966efc8a04d744f4e040344bf
+[2020/09/11 20:40:33][INFO][GETRequest]  Building client...
+[2020/09/11 20:40:33][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:40:33][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:40:33][INFO][GETRequest]  Sending request...
+[2020/09/11 20:40:33][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:40:33][INFO][GETRequest]  Request sent.
+[2020/09/11 20:40:33][INFO][GETRequest]  Received status 200
+[2020/09/11 20:40:33][INFO][process]  Handling the next request.
+[2020/09/11 20:40:33][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:40:33][INFO][process]  Connection released.
+[2020/09/11 20:40:33][INFO][report]  Database has session id: 198d1983fd6d529f91cae69a211a40557b97dcd96af695ecb11790917dbcb8063a1cd3b0ee27228a9081cf40c86a1528604db3d966efc8a04d744f4e040344bf
+[2020/09/11 20:40:33][INFO][report]  Response was found.
+[2020/09/11 20:40:33][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:41:14][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:41:14][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:41:14][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:41:14][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:41:14][WARNING][sendSessionVerification]  dctablac@gmail.com  198d1983fd6d529f91cae69a211a40557b97dcd96af695ecb11790917dbcb8063a1cd3b0ee27228a9081cf40c86a1528604db3d966efc8a04d744f4e040344bf
+[2020/09/11 20:41:14][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:41:14][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:41:14][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:41:14][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:41:14][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:41:14][INFO][handleRequest]  Worker is handling sesh_id: 8fd3dd1cae909388390d5888fcbab8e63e440f3044f43f903dd4c31f3cb38cfbd49f55ddc8087688e0de1eacfcd8fcf0ec62dcad56a877d7912bf0158e588c03
+[2020/09/11 20:41:14][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:41:14][INFO][POSTRequest]  Building client...
+[2020/09/11 20:41:14][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:41:14][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:41:14][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:41:14][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:41:14][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:41:14][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:41:14][INFO][process]  Handling the next request.
+[2020/09/11 20:41:14][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:41:14][INFO][process]  Connection released.
+[2020/09/11 20:41:15][INFO][report]  Database has session id: 8fd3dd1cae909388390d5888fcbab8e63e440f3044f43f903dd4c31f3cb38cfbd49f55ddc8087688e0de1eacfcd8fcf0ec62dcad56a877d7912bf0158e588c03
+[2020/09/11 20:41:15][INFO][report]  Response was found.
+[2020/09/11 20:41:15][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:41:19][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:41:19][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:41:19][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:41:19][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:41:19][WARNING][sendSessionVerification]  dctablac@gmail.com  8fd3dd1cae909388390d5888fcbab8e63e440f3044f43f903dd4c31f3cb38cfbd49f55ddc8087688e0de1eacfcd8fcf0ec62dcad56a877d7912bf0158e588c03
+[2020/09/11 20:41:19][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:41:19][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:41:19][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:41:19][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"aeb4bebc2d2ca4ee8f42a2bf2d54afd46b34aa4e7828bc18de0147b8e5b3238d7c0ad1d8c4040b6782161a4149d2b3aed78550ab9abe6dfa092bfd479468b202"}
+[2020/09/11 20:41:19][WARNING][callMovies]  OK
+[2020/09/11 20:41:19][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:41:19][WARNING][callMovies]  Success
+[2020/09/11 20:41:19][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:41:19][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:41:19][INFO][handleRequest]  Worker is handling sesh_id: aeb4bebc2d2ca4ee8f42a2bf2d54afd46b34aa4e7828bc18de0147b8e5b3238d7c0ad1d8c4040b6782161a4149d2b3aed78550ab9abe6dfa092bfd479468b202
+[2020/09/11 20:41:19][INFO][GETRequest]  Building client...
+[2020/09/11 20:41:19][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:41:19][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:41:19][INFO][GETRequest]  Sending request...
+[2020/09/11 20:41:19][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:41:20][INFO][GETRequest]  Request sent.
+[2020/09/11 20:41:20][INFO][GETRequest]  Received status 200
+[2020/09/11 20:41:20][INFO][process]  Handling the next request.
+[2020/09/11 20:41:20][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:41:20][INFO][process]  Connection released.
+[2020/09/11 20:41:20][INFO][report]  Database has session id: aeb4bebc2d2ca4ee8f42a2bf2d54afd46b34aa4e7828bc18de0147b8e5b3238d7c0ad1d8c4040b6782161a4149d2b3aed78550ab9abe6dfa092bfd479468b202
+[2020/09/11 20:41:20][INFO][report]  Response was found.
+[2020/09/11 20:41:20][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:45:50][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:45:50][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:45:50][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:45:50][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:45:50][WARNING][sendSessionVerification]  dctablac@gmail.com  aeb4bebc2d2ca4ee8f42a2bf2d54afd46b34aa4e7828bc18de0147b8e5b3238d7c0ad1d8c4040b6782161a4149d2b3aed78550ab9abe6dfa092bfd479468b202
+[2020/09/11 20:45:50][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:45:50][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:45:50][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:45:50][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:45:50][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:45:50][INFO][handleRequest]  Worker is handling sesh_id: 09c4bb2d609efafa5452a5eb2803b462d34ed23815d706ac851496632656fca490bce84f85f52ff9ab28e2238a5d58f91bdafc3b11a7f0d977fc3856907a71c4
+[2020/09/11 20:45:50][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:45:50][INFO][POSTRequest]  Building client...
+[2020/09/11 20:45:50][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:45:50][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:45:50][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:45:50][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:45:50][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:45:50][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:45:50][INFO][process]  Handling the next request.
+[2020/09/11 20:45:50][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:45:50][INFO][process]  Connection released.
+[2020/09/11 20:45:51][INFO][report]  Database has session id: 09c4bb2d609efafa5452a5eb2803b462d34ed23815d706ac851496632656fca490bce84f85f52ff9ab28e2238a5d58f91bdafc3b11a7f0d977fc3856907a71c4
+[2020/09/11 20:45:51][INFO][report]  Response was found.
+[2020/09/11 20:45:51][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:45:59][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:45:59][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:45:59][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:45:59][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:45:59][WARNING][sendSessionVerification]  dctablac@gmail.com  09c4bb2d609efafa5452a5eb2803b462d34ed23815d706ac851496632656fca490bce84f85f52ff9ab28e2238a5d58f91bdafc3b11a7f0d977fc3856907a71c4
+[2020/09/11 20:45:59][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:45:59][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:45:59][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:45:59][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:45:59][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:45:59][INFO][handleRequest]  Worker is handling sesh_id: 4905136fdf5888233f2b2dce6f823700bccc9bbb8bd57ccbef822482945dcdc6c06b75e6c40e0779a2893f867bad18b490e7fe2693da0a748fd377ed3e188872
+[2020/09/11 20:45:59][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:45:59][INFO][POSTRequest]  Building client...
+[2020/09/11 20:45:59][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:45:59][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:45:59][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:45:59][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:45:59][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:45:59][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:45:59][INFO][process]  Handling the next request.
+[2020/09/11 20:45:59][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:45:59][INFO][process]  Connection released.
+[2020/09/11 20:46:00][INFO][report]  Database has session id: 4905136fdf5888233f2b2dce6f823700bccc9bbb8bd57ccbef822482945dcdc6c06b75e6c40e0779a2893f867bad18b490e7fe2693da0a748fd377ed3e188872
+[2020/09/11 20:46:00][INFO][report]  Response was found.
+[2020/09/11 20:46:00][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:01][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:01][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:01][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:01][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:01][WARNING][sendSessionVerification]  dctablac@gmail.com  4905136fdf5888233f2b2dce6f823700bccc9bbb8bd57ccbef822482945dcdc6c06b75e6c40e0779a2893f867bad18b490e7fe2693da0a748fd377ed3e188872
+[2020/09/11 20:46:01][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:01][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:01][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:01][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:01][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:01][INFO][handleRequest]  Worker is handling sesh_id: aa4f36600133fb10269a14e4cba1e2f64c91686e0c936fd69736c17d0e7a876862bee97411dd94d25ab9937320acbb62e6c4c69fa5f2e32a195799fba2cad4f1
+[2020/09/11 20:46:01][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:01][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:01][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:01][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:01][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:01][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:01][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:01][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:01][INFO][process]  Handling the next request.
+[2020/09/11 20:46:01][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:01][INFO][process]  Connection released.
+[2020/09/11 20:46:01][INFO][report]  Database has session id: aa4f36600133fb10269a14e4cba1e2f64c91686e0c936fd69736c17d0e7a876862bee97411dd94d25ab9937320acbb62e6c4c69fa5f2e32a195799fba2cad4f1
+[2020/09/11 20:46:01][INFO][report]  Response was found.
+[2020/09/11 20:46:01][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:05][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:05][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:05][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:05][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:05][WARNING][sendSessionVerification]  dctablac@gmail.com  aa4f36600133fb10269a14e4cba1e2f64c91686e0c936fd69736c17d0e7a876862bee97411dd94d25ab9937320acbb62e6c4c69fa5f2e32a195799fba2cad4f1
+[2020/09/11 20:46:05][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:05][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:05][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:46:05][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"4df993630410ae0cbc7858f202eeb633901a04905d52e638f140da05b9f59c15e56725bb94c80e48f61c5cd6fbddb8f3e5310e8d1b2de6a5e09a345b89d92518"}
+[2020/09/11 20:46:05][WARNING][callMovies]  OK
+[2020/09/11 20:46:05][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:46:05][WARNING][callMovies]  Success
+[2020/09/11 20:46:05][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:46:05][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:05][INFO][handleRequest]  Worker is handling sesh_id: 4df993630410ae0cbc7858f202eeb633901a04905d52e638f140da05b9f59c15e56725bb94c80e48f61c5cd6fbddb8f3e5310e8d1b2de6a5e09a345b89d92518
+[2020/09/11 20:46:05][INFO][GETRequest]  Building client...
+[2020/09/11 20:46:05][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:46:05][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:46:05][INFO][GETRequest]  Sending request...
+[2020/09/11 20:46:05][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:05][INFO][GETRequest]  Request sent.
+[2020/09/11 20:46:05][INFO][GETRequest]  Received status 200
+[2020/09/11 20:46:05][INFO][process]  Handling the next request.
+[2020/09/11 20:46:05][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:05][INFO][process]  Connection released.
+[2020/09/11 20:46:06][INFO][report]  Database has session id: 4df993630410ae0cbc7858f202eeb633901a04905d52e638f140da05b9f59c15e56725bb94c80e48f61c5cd6fbddb8f3e5310e8d1b2de6a5e09a345b89d92518
+[2020/09/11 20:46:06][INFO][report]  Response was found.
+[2020/09/11 20:46:06][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:08][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:08][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:08][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:08][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:08][WARNING][sendSessionVerification]  dctablac@gmail.com  4df993630410ae0cbc7858f202eeb633901a04905d52e638f140da05b9f59c15e56725bb94c80e48f61c5cd6fbddb8f3e5310e8d1b2de6a5e09a345b89d92518
+[2020/09/11 20:46:08][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:08][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:08][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:46:08][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"996e8b32d1b4d58290c2304b0b53f352f8520778c116762841f6cf3de91a2846d82fc5e6625c77f4b19c7087eba1fb0af2d30c732df7c51ae7d82486f54524a0"}
+[2020/09/11 20:46:08][WARNING][callMovies]  OK
+[2020/09/11 20:46:08][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:46:08][WARNING][callMovies]  Success
+[2020/09/11 20:46:08][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:46:08][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:08][INFO][handleRequest]  Worker is handling sesh_id: 996e8b32d1b4d58290c2304b0b53f352f8520778c116762841f6cf3de91a2846d82fc5e6625c77f4b19c7087eba1fb0af2d30c732df7c51ae7d82486f54524a0
+[2020/09/11 20:46:08][INFO][GETRequest]  Building client...
+[2020/09/11 20:46:08][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:46:08][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:46:08][INFO][GETRequest]  Sending request...
+[2020/09/11 20:46:08][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:08][INFO][GETRequest]  Request sent.
+[2020/09/11 20:46:08][INFO][GETRequest]  Received status 200
+[2020/09/11 20:46:08][INFO][process]  Handling the next request.
+[2020/09/11 20:46:08][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:08][INFO][process]  Connection released.
+[2020/09/11 20:46:09][INFO][report]  Database has session id: 996e8b32d1b4d58290c2304b0b53f352f8520778c116762841f6cf3de91a2846d82fc5e6625c77f4b19c7087eba1fb0af2d30c732df7c51ae7d82486f54524a0
+[2020/09/11 20:46:09][INFO][report]  Response was found.
+[2020/09/11 20:46:09][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:13][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:13][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:13][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:13][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:13][WARNING][sendSessionVerification]  dctablac@gmail.com  996e8b32d1b4d58290c2304b0b53f352f8520778c116762841f6cf3de91a2846d82fc5e6625c77f4b19c7087eba1fb0af2d30c732df7c51ae7d82486f54524a0
+[2020/09/11 20:46:13][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:13][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:13][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:13][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:13][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:13][INFO][handleRequest]  Worker is handling sesh_id: 372fcfeff97dc91dd178cae38daebefc31654ced9a187d683380ed5f09ab7c32d40705dc5dcd699ceaef1f1363da01e7d942a9f818bbc157e9052d11123f7f90
+[2020/09/11 20:46:13][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:13][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:13][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:13][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:13][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:14][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:14][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:14][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:14][INFO][process]  Handling the next request.
+[2020/09/11 20:46:14][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:14][INFO][process]  Connection released.
+[2020/09/11 20:46:14][INFO][report]  Database has session id: 372fcfeff97dc91dd178cae38daebefc31654ced9a187d683380ed5f09ab7c32d40705dc5dcd699ceaef1f1363da01e7d942a9f818bbc157e9052d11123f7f90
+[2020/09/11 20:46:14][INFO][report]  Response was found.
+[2020/09/11 20:46:14][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:15][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:15][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:15][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:15][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:15][WARNING][sendSessionVerification]  dctablac@gmail.com  372fcfeff97dc91dd178cae38daebefc31654ced9a187d683380ed5f09ab7c32d40705dc5dcd699ceaef1f1363da01e7d942a9f818bbc157e9052d11123f7f90
+[2020/09/11 20:46:15][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:15][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:15][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:15][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:15][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:15][INFO][handleRequest]  Worker is handling sesh_id: f667845e13b90cb78b0e9942d662d0efb5e3e110b8ea123d565bdacfdcc4b49ebbe7bcf2809cdba0fd596fcb846079a91a7414908c4b1c31230038beb4b8fe10
+[2020/09/11 20:46:15][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:15][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:15][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:15][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:15][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:15][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:15][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:15][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:15][INFO][process]  Handling the next request.
+[2020/09/11 20:46:15][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:15][INFO][process]  Connection released.
+[2020/09/11 20:46:15][INFO][report]  Database has session id: f667845e13b90cb78b0e9942d662d0efb5e3e110b8ea123d565bdacfdcc4b49ebbe7bcf2809cdba0fd596fcb846079a91a7414908c4b1c31230038beb4b8fe10
+[2020/09/11 20:46:15][INFO][report]  Response was found.
+[2020/09/11 20:46:15][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:22][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:22][WARNING][sendSessionVerification]  dctablac@gmail.com  f667845e13b90cb78b0e9942d662d0efb5e3e110b8ea123d565bdacfdcc4b49ebbe7bcf2809cdba0fd596fcb846079a91a7414908c4b1c31230038beb4b8fe10
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:22][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:22][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][handleRequest]  Worker is handling sesh_id: f8fc4d4659f80ea1040fd0e559147222a5a58690685df9f26a40711f2da1a5f1786a27f83c507b2982f346c918ac20fe0ed192e505e00e9fca4bfbc066dd282e
+[2020/09/11 20:46:22][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:22][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:22][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:22][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:22][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:22][INFO][process]  Handling the next request.
+[2020/09/11 20:46:22][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][process]  Connection released.
+[2020/09/11 20:46:22][INFO][report]  Database has session id: f8fc4d4659f80ea1040fd0e559147222a5a58690685df9f26a40711f2da1a5f1786a27f83c507b2982f346c918ac20fe0ed192e505e00e9fca4bfbc066dd282e
+[2020/09/11 20:46:22][INFO][report]  Response was found.
+[2020/09/11 20:46:22][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:22][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:22][WARNING][sendSessionVerification]  dctablac@gmail.com  f8fc4d4659f80ea1040fd0e559147222a5a58690685df9f26a40711f2da1a5f1786a27f83c507b2982f346c918ac20fe0ed192e505e00e9fca4bfbc066dd282e
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:22][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:22][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:22][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][handleRequest]  Worker is handling sesh_id: d19e4a2e0da4f8b73a258510a20db97fca70d1853aea88d81924ed35540f952053bc3cd38dac8a9f52edf23718ab7f5fa961f75a193d074d4c7b8790cbca629b
+[2020/09/11 20:46:22][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:22][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:22][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:22][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:22][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:22][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:22][INFO][process]  Handling the next request.
+[2020/09/11 20:46:22][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:22][INFO][process]  Connection released.
+[2020/09/11 20:46:23][INFO][report]  Database has session id: d19e4a2e0da4f8b73a258510a20db97fca70d1853aea88d81924ed35540f952053bc3cd38dac8a9f52edf23718ab7f5fa961f75a193d074d4c7b8790cbca629b
+[2020/09/11 20:46:23][INFO][report]  Response was found.
+[2020/09/11 20:46:23][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:37][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:37][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:37][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:37][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:37][WARNING][sendSessionVerification]  dctablac@gmail.com  d19e4a2e0da4f8b73a258510a20db97fca70d1853aea88d81924ed35540f952053bc3cd38dac8a9f52edf23718ab7f5fa961f75a193d074d4c7b8790cbca629b
+[2020/09/11 20:46:37][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:37][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:37][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:46:37][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"b81911c4b79840e285c1e50fed0bdfdfa8866e5724375e3e6dbd935f17f87fa2cee538a943a3df22583e26545d0dfe0b92cb1322cf17b4e9b5ae93f5c9f27b3b"}
+[2020/09/11 20:46:37][WARNING][callMovies]  OK
+[2020/09/11 20:46:37][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:46:37][WARNING][callMovies]  Success
+[2020/09/11 20:46:37][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:46:37][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:37][INFO][handleRequest]  Worker is handling sesh_id: b81911c4b79840e285c1e50fed0bdfdfa8866e5724375e3e6dbd935f17f87fa2cee538a943a3df22583e26545d0dfe0b92cb1322cf17b4e9b5ae93f5c9f27b3b
+[2020/09/11 20:46:37][INFO][GETRequest]  Building client...
+[2020/09/11 20:46:37][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:46:37][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:46:37][INFO][GETRequest]  Sending request...
+[2020/09/11 20:46:37][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:37][INFO][GETRequest]  Request sent.
+[2020/09/11 20:46:37][INFO][GETRequest]  Received status 200
+[2020/09/11 20:46:37][INFO][process]  Handling the next request.
+[2020/09/11 20:46:37][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:37][INFO][process]  Connection released.
+[2020/09/11 20:46:38][INFO][report]  Database has session id: b81911c4b79840e285c1e50fed0bdfdfa8866e5724375e3e6dbd935f17f87fa2cee538a943a3df22583e26545d0dfe0b92cb1322cf17b4e9b5ae93f5c9f27b3b
+[2020/09/11 20:46:38][INFO][report]  Response was found.
+[2020/09/11 20:46:38][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:39][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:39][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:39][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:39][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:39][WARNING][sendSessionVerification]  dctablac@gmail.com  b81911c4b79840e285c1e50fed0bdfdfa8866e5724375e3e6dbd935f17f87fa2cee538a943a3df22583e26545d0dfe0b92cb1322cf17b4e9b5ae93f5c9f27b3b
+[2020/09/11 20:46:39][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:39][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:39][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:46:39][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"55ecce11f1ab4e1ec88d3fad402ec073ea05f57b1cd53f736a26d91052a65f5c20f08b6ce2cfda7107bf4557582faf546c487ef0a9b03eb2ebd18682bfb7bb6c"}
+[2020/09/11 20:46:39][WARNING][callMovies]  OK
+[2020/09/11 20:46:39][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:46:39][WARNING][callMovies]  Success
+[2020/09/11 20:46:39][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:46:39][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:39][INFO][handleRequest]  Worker is handling sesh_id: 55ecce11f1ab4e1ec88d3fad402ec073ea05f57b1cd53f736a26d91052a65f5c20f08b6ce2cfda7107bf4557582faf546c487ef0a9b03eb2ebd18682bfb7bb6c
+[2020/09/11 20:46:39][INFO][GETRequest]  Building client...
+[2020/09/11 20:46:39][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:46:39][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:46:39][INFO][GETRequest]  Sending request...
+[2020/09/11 20:46:39][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:40][INFO][GETRequest]  Request sent.
+[2020/09/11 20:46:40][INFO][GETRequest]  Received status 200
+[2020/09/11 20:46:40][INFO][process]  Handling the next request.
+[2020/09/11 20:46:40][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:40][INFO][process]  Connection released.
+[2020/09/11 20:46:40][INFO][report]  Database has session id: 55ecce11f1ab4e1ec88d3fad402ec073ea05f57b1cd53f736a26d91052a65f5c20f08b6ce2cfda7107bf4557582faf546c487ef0a9b03eb2ebd18682bfb7bb6c
+[2020/09/11 20:46:40][INFO][report]  Response was found.
+[2020/09/11 20:46:40][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:45][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:45][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:45][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:45][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:45][WARNING][sendSessionVerification]  dctablac@gmail.com  55ecce11f1ab4e1ec88d3fad402ec073ea05f57b1cd53f736a26d91052a65f5c20f08b6ce2cfda7107bf4557582faf546c487ef0a9b03eb2ebd18682bfb7bb6c
+[2020/09/11 20:46:45][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:45][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:45][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:45][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:45][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:45][INFO][handleRequest]  Worker is handling sesh_id: a18f787e22abd42b323b509f48bd00ab97b842b7c299ce7cadb9399c969daef5891545e5eef48d42f71172bdf36315a170fb8cda01e86687a8bf45c8d5f83bf4
+[2020/09/11 20:46:45][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:45][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:45][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:45][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:45][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:45][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:45][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:45][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:45][INFO][process]  Handling the next request.
+[2020/09/11 20:46:45][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:45][INFO][process]  Connection released.
+[2020/09/11 20:46:45][INFO][report]  Database has session id: a18f787e22abd42b323b509f48bd00ab97b842b7c299ce7cadb9399c969daef5891545e5eef48d42f71172bdf36315a170fb8cda01e86687a8bf45c8d5f83bf4
+[2020/09/11 20:46:45][INFO][report]  Response was found.
+[2020/09/11 20:46:45][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:46][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:46][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:46][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:46][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:46][WARNING][sendSessionVerification]  dctablac@gmail.com  a18f787e22abd42b323b509f48bd00ab97b842b7c299ce7cadb9399c969daef5891545e5eef48d42f71172bdf36315a170fb8cda01e86687a8bf45c8d5f83bf4
+[2020/09/11 20:46:46][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:46][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:46][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:46][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:46][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:46][INFO][handleRequest]  Worker is handling sesh_id: c36e8ec1f3d0962bfdfe8ac44738cda11dd9e728fa1d9a44efc2d336377d9524ab95b56408920d20377f8f2fc4af2fa7a9f1b7a9c39fc9e1fd380962f23ecd2d
+[2020/09/11 20:46:46][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:46][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:46][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:46][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:46][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:46][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:46][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:46][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:46][INFO][process]  Handling the next request.
+[2020/09/11 20:46:46][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:46][INFO][process]  Connection released.
+[2020/09/11 20:46:47][INFO][report]  Database has session id: c36e8ec1f3d0962bfdfe8ac44738cda11dd9e728fa1d9a44efc2d336377d9524ab95b56408920d20377f8f2fc4af2fa7a9f1b7a9c39fc9e1fd380962f23ecd2d
+[2020/09/11 20:46:47][INFO][report]  Response was found.
+[2020/09/11 20:46:47][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:49][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:49][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:49][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:49][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:49][WARNING][sendSessionVerification]  dctablac@gmail.com  c36e8ec1f3d0962bfdfe8ac44738cda11dd9e728fa1d9a44efc2d336377d9524ab95b56408920d20377f8f2fc4af2fa7a9f1b7a9c39fc9e1fd380962f23ecd2d
+[2020/09/11 20:46:49][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:49][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:49][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:49][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:49][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:49][INFO][handleRequest]  Worker is handling sesh_id: 1526ff100949c3fa0daee87d96e77c86bf6084648fc16c311b658d72268317f7874e2941d35f7e3fb6a76f0e0b46b0f22726fa66bcea7f196667d979fcc09a9e
+[2020/09/11 20:46:49][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:49][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:49][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:49][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:49][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:49][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:49][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:49][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:49][INFO][process]  Handling the next request.
+[2020/09/11 20:46:49][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:49][INFO][process]  Connection released.
+[2020/09/11 20:46:50][INFO][report]  Database has session id: 1526ff100949c3fa0daee87d96e77c86bf6084648fc16c311b658d72268317f7874e2941d35f7e3fb6a76f0e0b46b0f22726fa66bcea7f196667d979fcc09a9e
+[2020/09/11 20:46:50][INFO][report]  Response was found.
+[2020/09/11 20:46:50][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:50][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:50][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:50][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:50][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:50][WARNING][sendSessionVerification]  dctablac@gmail.com  1526ff100949c3fa0daee87d96e77c86bf6084648fc16c311b658d72268317f7874e2941d35f7e3fb6a76f0e0b46b0f22726fa66bcea7f196667d979fcc09a9e
+[2020/09/11 20:46:50][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:50][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:50][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:50][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:50][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:50][INFO][handleRequest]  Worker is handling sesh_id: 1975cf8bbd317ed1c35a5ef75562bfac5e5b71e72fbebc608bd59ba5047719d55cff8529bb814b74ade3006c64429f8ce7faf735b0dbc409eaa3923e22e550ac
+[2020/09/11 20:46:50][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:50][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:50][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:50][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:50][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:50][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:50][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:50][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:50][INFO][process]  Handling the next request.
+[2020/09/11 20:46:50][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:50][INFO][process]  Connection released.
+[2020/09/11 20:46:51][INFO][report]  Database has session id: 1975cf8bbd317ed1c35a5ef75562bfac5e5b71e72fbebc608bd59ba5047719d55cff8529bb814b74ade3006c64429f8ce7faf735b0dbc409eaa3923e22e550ac
+[2020/09/11 20:46:51][INFO][report]  Response was found.
+[2020/09/11 20:46:51][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:58][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:58][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:58][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:58][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:58][WARNING][sendSessionVerification]  dctablac@gmail.com  1975cf8bbd317ed1c35a5ef75562bfac5e5b71e72fbebc608bd59ba5047719d55cff8529bb814b74ade3006c64429f8ce7faf735b0dbc409eaa3923e22e550ac
+[2020/09/11 20:46:58][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:58][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:58][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:58][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:58][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:58][INFO][handleRequest]  Worker is handling sesh_id: f798894b9e8c372e556d4126d0ea34826ccc3c206c2e96cec2a3248e9b8d04aa33b258d9d0e246d8ee452b89091e0ab423e071db6cfb1eda4169cb86b2976aa2
+[2020/09/11 20:46:58][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:58][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:58][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:58][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:58][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:58][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:58][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:58][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:58][INFO][process]  Handling the next request.
+[2020/09/11 20:46:58][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:58][INFO][process]  Connection released.
+[2020/09/11 20:46:58][INFO][report]  Database has session id: f798894b9e8c372e556d4126d0ea34826ccc3c206c2e96cec2a3248e9b8d04aa33b258d9d0e246d8ee452b89091e0ab423e071db6cfb1eda4169cb86b2976aa2
+[2020/09/11 20:46:58][INFO][report]  Response was found.
+[2020/09/11 20:46:58][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:46:59][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:46:59][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:46:59][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:46:59][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:46:59][WARNING][sendSessionVerification]  dctablac@gmail.com  f798894b9e8c372e556d4126d0ea34826ccc3c206c2e96cec2a3248e9b8d04aa33b258d9d0e246d8ee452b89091e0ab423e071db6cfb1eda4169cb86b2976aa2
+[2020/09/11 20:46:59][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:46:59][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:46:59][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:46:59][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:46:59][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:46:59][INFO][handleRequest]  Worker is handling sesh_id: 9c1344d21610ae791ecfb37bd9d9e371d7f6d36befbcba4ed25bd30ec86505c835f89ff0a50eddac8dc267362f2b8d98bf9eb03d0bc3da5a434047edb170835a
+[2020/09/11 20:46:59][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:46:59][INFO][POSTRequest]  Building client...
+[2020/09/11 20:46:59][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:46:59][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:46:59][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:46:59][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:46:59][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:46:59][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:46:59][INFO][process]  Handling the next request.
+[2020/09/11 20:46:59][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:46:59][INFO][process]  Connection released.
+[2020/09/11 20:46:59][INFO][report]  Database has session id: 9c1344d21610ae791ecfb37bd9d9e371d7f6d36befbcba4ed25bd30ec86505c835f89ff0a50eddac8dc267362f2b8d98bf9eb03d0bc3da5a434047edb170835a
+[2020/09/11 20:46:59][INFO][report]  Response was found.
+[2020/09/11 20:46:59][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:47:14][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:47:14][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:47:14][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:47:14][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:47:14][WARNING][sendSessionVerification]  dctablac@gmail.com  9c1344d21610ae791ecfb37bd9d9e371d7f6d36befbcba4ed25bd30ec86505c835f89ff0a50eddac8dc267362f2b8d98bf9eb03d0bc3da5a434047edb170835a
+[2020/09/11 20:47:14][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:47:14][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:47:14][INFO][callBilling]  Billing has header email: dctablac@gmail.com
+[2020/09/11 20:47:14][INFO][callBilling]  Request added to queue.
+[2020/09/11 20:47:14][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:47:14][INFO][handleRequest]  Worker is handling sesh_id: 678be48e3ac570f6d31665191f8e14214996c0eec0e08adbccc6714015dc6181c6b61520b45edf0dbb96a91a578e8ff8e74c5aa4a5eab9f587799de78e0d31d0
+[2020/09/11 20:47:14][WARNING][POSTRequest]  THIS GUY HAS EMAILdctablac@gmail.com
+[2020/09/11 20:47:14][INFO][POSTRequest]  Building client...
+[2020/09/11 20:47:14][INFO][POSTRequest]  Building WebTarget...
+[2020/09/11 20:47:14][INFO][POSTRequest]  Starting invocation builder...
+[2020/09/11 20:47:14][INFO][POSTRequest]  Sending request...
+[2020/09/11 20:47:14][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:47:15][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:47:15][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:47:15][INFO][POSTRequest]  Request sent.
+[2020/09/11 20:47:15][INFO][POSTRequest]  Received status 200
+[2020/09/11 20:47:15][INFO][process]  Handling the next request.
+[2020/09/11 20:47:15][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:47:15][INFO][process]  Connection released.
+[2020/09/11 20:47:16][INFO][report]  Database has session id: 678be48e3ac570f6d31665191f8e14214996c0eec0e08adbccc6714015dc6181c6b61520b45edf0dbb96a91a578e8ff8e74c5aa4a5eab9f587799de78e0d31d0
+[2020/09/11 20:47:16][INFO][report]  Response was found.
+[2020/09/11 20:47:16][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:47:25][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:47:25][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:47:25][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:47:25][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:47:25][WARNING][sendSessionVerification]  dctablac@gmail.com  678be48e3ac570f6d31665191f8e14214996c0eec0e08adbccc6714015dc6181c6b61520b45edf0dbb96a91a578e8ff8e74c5aa4a5eab9f587799de78e0d31d0
+[2020/09/11 20:47:25][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:47:25][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:47:25][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:47:25][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"7363046a750add76fc353b8d4c4a711afebf5bddafb078b90d8fe1d65e61fee6fdc4d49bdd5bfa94fdc7609e3e5d179516b67ba7da4a3f76a02c406430bc3559"}
+[2020/09/11 20:47:25][WARNING][callMovies]  OK
+[2020/09/11 20:47:25][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:47:25][WARNING][callMovies]  Success
+[2020/09/11 20:47:25][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:47:25][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:47:25][INFO][handleRequest]  Worker is handling sesh_id: 7363046a750add76fc353b8d4c4a711afebf5bddafb078b90d8fe1d65e61fee6fdc4d49bdd5bfa94fdc7609e3e5d179516b67ba7da4a3f76a02c406430bc3559
+[2020/09/11 20:47:25][INFO][GETRequest]  Building client...
+[2020/09/11 20:47:25][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:47:25][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:47:25][INFO][GETRequest]  Sending request...
+[2020/09/11 20:47:25][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:47:25][INFO][GETRequest]  Request sent.
+[2020/09/11 20:47:25][INFO][GETRequest]  Received status 200
+[2020/09/11 20:47:25][INFO][process]  Handling the next request.
+[2020/09/11 20:47:25][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:47:25][INFO][process]  Connection released.
+[2020/09/11 20:47:26][INFO][report]  Database has session id: 7363046a750add76fc353b8d4c4a711afebf5bddafb078b90d8fe1d65e61fee6fdc4d49bdd5bfa94fdc7609e3e5d179516b67ba7da4a3f76a02c406430bc3559
+[2020/09/11 20:47:26][INFO][report]  Response was found.
+[2020/09/11 20:47:26][INFO][report]  Gateway db updated. Connection released.
+[2020/09/11 20:47:30][WARNING][sendSessionVerification]  http://0.0.0.0:12346/api/idm/session
+[2020/09/11 20:47:30][INFO][sendSessionVerification]  Building client...
+[2020/09/11 20:47:30][INFO][sendSessionVerification]  Building WebTarget...
+[2020/09/11 20:47:30][INFO][sendSessionVerification]  Starting invocation builder...
+[2020/09/11 20:47:30][WARNING][sendSessionVerification]  dctablac@gmail.com  7363046a750add76fc353b8d4c4a711afebf5bddafb078b90d8fe1d65e61fee6fdc4d49bdd5bfa94fdc7609e3e5d179516b67ba7da4a3f76a02c406430bc3559
+[2020/09/11 20:47:30][INFO][sendSessionVerification]  Sending request...
+[2020/09/11 20:47:31][INFO][sendSessionVerification]  Request sent.
+[2020/09/11 20:47:31][WARNING][callMovies]  Trying to make jsonText
+[2020/09/11 20:47:31][WARNING][callMovies]  {"resultCode":130,"message":"Session is active.","session_id":"3d76be1abe937fd99cefbf7946123dc9f02b5c430974c011563d15e8b0d7180985638db562edc79ffb868c8a5ec05485573d3f13744e7bc24682b8e22caf47a5"}
+[2020/09/11 20:47:31][WARNING][callMovies]  OK
+[2020/09/11 20:47:31][WARNING][callMovies]  Trying to make response model
+[2020/09/11 20:47:31][WARNING][callMovies]  Success
+[2020/09/11 20:47:31][INFO][callMovies]  Request added to queue.
+[2020/09/11 20:47:31][INFO][handleRequest]  Worker is handling email: dctablac@gmail.com
+[2020/09/11 20:47:31][INFO][handleRequest]  Worker is handling sesh_id: 3d76be1abe937fd99cefbf7946123dc9f02b5c430974c011563d15e8b0d7180985638db562edc79ffb868c8a5ec05485573d3f13744e7bc24682b8e22caf47a5
+[2020/09/11 20:47:31][INFO][GETRequest]  Building client...
+[2020/09/11 20:47:31][INFO][GETRequest]  Building WebTarget...
+[2020/09/11 20:47:31][INFO][GETRequest]  Starting invocation builder...
+[2020/09/11 20:47:31][INFO][GETRequest]  Sending request...
+[2020/09/11 20:47:31][INFO][report]  No transaction found yet. Connection released.
+[2020/09/11 20:47:31][INFO][GETRequest]  Request sent.
+[2020/09/11 20:47:31][INFO][GETRequest]  Received status 200
+[2020/09/11 20:47:31][INFO][process]  Handling the next request.
+[2020/09/11 20:47:31][INFO][process]  Email in the process: dctablac@gmail.com
+[2020/09/11 20:47:31][INFO][process]  Connection released.
+[2020/09/11 20:47:31][INFO][report]  Database has session id: 3d76be1abe937fd99cefbf7946123dc9f02b5c430974c011563d15e8b0d7180985638db562edc79ffb868c8a5ec05485573d3f13744e7bc24682b8e22caf47a5
+[2020/09/11 20:47:31][INFO][report]  Response was found.
+[2020/09/11 20:47:31][INFO][report]  Gateway db updated. Connection released.

@@ -1,8 +1,10 @@
 package edu.uci.ics.dtablac.service.gateway.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.uci.ics.dtablac.service.gateway.GatewayService;
 import edu.uci.ics.dtablac.service.gateway.configs.BillingConfigs;
 import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
+import edu.uci.ics.dtablac.service.gateway.models.SessionResponseModel;
 import edu.uci.ics.dtablac.service.gateway.threadpool.ClientRequest;
 import edu.uci.ics.dtablac.service.gateway.threadpool.HTTPMethod;
 import edu.uci.ics.dtablac.service.gateway.transaction.TransactionGenerator;
@@ -10,14 +12,29 @@ import edu.uci.ics.dtablac.service.gateway.transaction.TransactionGenerator;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.io.IOException;
 
 public class billing {
 
     public static Response callBilling(String endpointPath, HttpHeaders headers, byte[] jsonBytes) {
         // Validate session
+        ObjectMapper mapper = new ObjectMapper();
         Response session_response = utility.sendSessionVerification(headers);
-        if (session_response != null) {
-            return session_response;
+        String jsonText = session_response.readEntity(String.class);
+        String session_id = headers.getHeaderString("session_id");
+
+        try {
+            SessionResponseModel responseModel = mapper.readValue(jsonText, SessionResponseModel.class);
+            if (responseModel.getRESULTCODE() == 134) {
+                ServiceLogger.LOGGER.warning("SOMETHING IS UP");
+                ServiceLogger.LOGGER.warning(String.format("%d",(responseModel.getRESULTCODE())));
+                return session_response;
+            }
+            session_id = responseModel.getSESSION_ID();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Could not read session response");
         }
 
         // Config path
@@ -27,7 +44,8 @@ public class billing {
 
         // Header fields
         String EMAIL = headers.getHeaderString("email");
-        String SESSION_ID = headers.getHeaderString("session_id");
+        ServiceLogger.LOGGER.info("Billing has header email: "+EMAIL);
+        String SESSION_ID = session_id;
         String TRANSACTION_ID = headers.getHeaderString("transaction_id");
 
         Response.ResponseBuilder response = null;
@@ -37,7 +55,8 @@ public class billing {
 
             // Make a new request and add to the queue
             ClientRequest request = new ClientRequest(EMAIL, SESSION_ID, TRANSACTION_ID,
-                    servicePath, endpointPath, HTTPMethod.POST, null , jsonBytes);
+                    servicePath, endpointPath, HTTPMethod.POST, null, jsonBytes);
+
 
             GatewayService.getThreadPool().putRequest(request);
             ServiceLogger.LOGGER.info("Request added to queue.");
@@ -47,6 +66,7 @@ public class billing {
             response.header("transaction_id", TRANSACTION_ID);
             response.header("request_delay", GatewayService.getThreadConfigs().getRequestDelay());
 
+
             return response.build();
         }
         return utility.POSTRequest(servicePath, endpointPath, EMAIL, SESSION_ID, TRANSACTION_ID, jsonBytes);
@@ -54,10 +74,23 @@ public class billing {
 
     public static Response callComplete(String endpointPath, HttpHeaders headers, UriInfo uri_info) {
         // Validate session
-        Response session_response = utility.sendSessionVerification(headers);
-        if (session_response != null) {
-            return session_response;
+        //ObjectMapper mapper = new ObjectMapper();
+        //Response session_response = utility.sendSessionVerification(headers);
+        //String jsonText = session_response.readEntity(String.class);
+        //String session_id = headers.getHeaderString("session_id");
+
+        /*try {
+            SessionResponseModel responseModel = mapper.readValue(jsonText, SessionResponseModel.class);
+            if (responseModel.getRESULTCODE() != 130) {
+                ServiceLogger.LOGGER.warning("SOMETHING IS UP");
+                return session_response;
+            }
+            session_id = responseModel.getSESSION_ID();
         }
+        catch (IOException e) {
+            e.printStackTrace();
+            ServiceLogger.LOGGER.warning("Could not read session response");
+        }*/
 
         // Config path
         BillingConfigs billingConfigs = GatewayService.getBillingConfigs();

@@ -74,8 +74,7 @@ public class BillingPage {
     @Path("order/complete")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
     public Response orderComplete(@Context HttpHeaders headers, @Context UriInfo uri_info) {
-        return billing.callComplete(GatewayService.getBillingConfigs().getOrderPlacePath(), headers, uri_info);
+        return billing.callComplete(GatewayService.getBillingConfigs().getOrderCompletePath(), headers, uri_info);
     }
 }

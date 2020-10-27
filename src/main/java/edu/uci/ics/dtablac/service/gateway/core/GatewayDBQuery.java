@@ -1,10 +1,7 @@
 package edu.uci.ics.dtablac.service.gateway.core;
 
-import edu.uci.ics.dtablac.service.gateway.GatewayService;
-import edu.uci.ics.dtablac.service.gateway.connectionpool.ConnectionPoolManager;
 import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
 
-import javax.ws.rs.core.Response;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,7 +37,7 @@ public class GatewayDBQuery {
 
         PreparedStatement ps = null;
         try {
-            ps = GatewayService.getConnectionPoolManager().requestCon().prepareStatement(query);
+            ps = connection.prepareStatement(query);
             ps.setString(1, transaction_id);
             ps.setString(2, email);
             ps.setString(3, session_id);

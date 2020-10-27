@@ -62,7 +62,7 @@ public class ConnectionPoolManager
     {
         // TODO request connections from hikariConPool
         try {
-            return this.hikariConPool.getConnection();
+            return hikariConPool.getConnection();
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -72,11 +72,12 @@ public class ConnectionPoolManager
     }
 
     public void releaseCon(Connection con) {
-        this.hikariConPool.evictConnection(con);
         // TODO release connections back to hikariConPool
+        this.hikariConPool.evictConnection(con);
         /*try {
             ServiceLogger.LOGGER.info("Releasing a connection back to the pool.");
-            con.close();
+            hikariConPool.evictConnection(con);
+            ServiceLogger.LOGGER.info("Released.");
         } catch (SQLException e) {
             e.printStackTrace();
             ServiceLogger.LOGGER.warning("Could not release the connection.");

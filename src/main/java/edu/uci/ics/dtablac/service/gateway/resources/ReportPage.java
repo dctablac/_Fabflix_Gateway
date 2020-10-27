@@ -31,36 +31,47 @@ public class ReportPage {
         String MESSAGE = "This is a message.";
         long REQUEST_DELAY = GatewayService.getThreadConfigs().getRequestDelay();
 
-        // Get a connection
-        ConnectionPoolManager pool = GatewayService.getConnectionPoolManager();
-        Connection connection = pool.requestCon();
-
-        ResultSet rs = GatewayDBQuery.sendGatewayDBQuery(GatewayDBQuery.buildGatewayDBQuery(connection, TRANSACTION_ID));
         try {
+            // Get a connection
+            Connection connection = GatewayService.getConnectionPoolManager().requestCon();
+
+            ResultSet rs = GatewayDBQuery.sendGatewayDBQuery(GatewayDBQuery.buildGatewayDBQuery(connection, TRANSACTION_ID));
+
             if (rs.next()) { // If transaction exists in the database, (send response to user), then delete it.
                 int http_status = rs.getInt("http_status");
                 String responseStr = rs.getString("response");
+                String email = rs.getString("email");
+                String session_id = rs.getString("session_id");
+                ServiceLogger.LOGGER.info("Database has session id: "+session_id);
                 Response.ResponseBuilder responseBuilder = Response.status(http_status).entity(responseStr);
+                responseBuilder.header("email", email);
+                responseBuilder.header("session_id", session_id);
                 GatewayDBQuery.deleteEntry(GatewayDBQuery.buildDeleteEntryUpdate(connection, TRANSACTION_ID));
                 response = responseBuilder.build();
                 ServiceLogger.LOGGER.info("Response was found.");
+
+                // Release the connection
+                GatewayService.getConnectionPoolManager().releaseCon(connection);
+                ServiceLogger.LOGGER.info("Gateway db updated. Connection released.");
             }
             else { // If no transaction_id is mapped, send response 204 (no content).
+                // Release the connection
+                GatewayService.getConnectionPoolManager().releaseCon(connection);
+                ServiceLogger.LOGGER.info("No transaction found yet. Connection released.");
+
                 Response.ResponseBuilder responseBuilder = Response.status(Response.Status.NO_CONTENT);
                 responseBuilder.header("message", MESSAGE);
                 responseBuilder.header("request_delay", REQUEST_DELAY);
                 responseBuilder.header("transaction_id", TRANSACTION_ID);
 
                 response = responseBuilder.build();
+
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
             ServiceLogger.LOGGER.warning("Something went wrong querying from the gateway's database.");
         }
-
-        // Release the connection
-        pool.releaseCon(connection);
 
         return response;
     }

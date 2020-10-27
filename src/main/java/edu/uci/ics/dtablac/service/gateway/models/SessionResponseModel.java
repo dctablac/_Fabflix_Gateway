@@ -6,15 +6,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SessionResponseModel {
-    @JsonProperty(value = "resultCode", required = true)
-    private Integer RESULTCODE;
-    @JsonProperty(value = "message", required = true)
+    @JsonProperty(value = "resultCode")
+    private int RESULTCODE;
+    @JsonProperty(value = "message")
     private String MESSAGE;
     @JsonProperty(value = "session_id")
     private String SESSION_ID;
 
     @JsonCreator
-    public SessionResponseModel(@JsonProperty(value = "resultCode", required = true) Integer newRESULTCODE,
+    public SessionResponseModel(@JsonProperty(value = "resultCode", required = true) int newRESULTCODE,
                                 @JsonProperty(value = "message", required = true) String newMESSAGE,
                                 @JsonProperty(value = "session_id") String newSESSION_ID) {
         this.RESULTCODE = newRESULTCODE;
@@ -23,7 +23,7 @@ public class SessionResponseModel {
     }
 
     @JsonProperty(value = "resultCode")
-    public Integer getRESULTCODE() { return RESULTCODE; }
+    public int getRESULTCODE() { return RESULTCODE; }
     @JsonProperty(value = "message")
     public String getMESSAGE() { return MESSAGE; }
     @JsonProperty(value = "session_id")

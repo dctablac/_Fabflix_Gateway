@@ -50,6 +50,8 @@ dependencies {
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.12'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+
+    compile group: 'org.glassfish.jersey.media', name:'jersey-media-json-jackson', version: '2.28'
     
     // PayPal API
     compile group: 'com.paypal.sdk', name: 'checkout-sdk', version: '1.0.1'

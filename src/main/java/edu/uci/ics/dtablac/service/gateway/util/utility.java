@@ -1,10 +1,7 @@
 package edu.uci.ics.dtablac.service.gateway.util;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.uci.ics.dtablac.service.gateway.GatewayService;
-import edu.uci.ics.dtablac.service.gateway.configs.ConfigsModel;
 import edu.uci.ics.dtablac.service.gateway.configs.IdmConfigs;
-import edu.uci.ics.dtablac.service.gateway.configs.ServiceConfigs;
 import edu.uci.ics.dtablac.service.gateway.logger.ServiceLogger;
 import edu.uci.ics.dtablac.service.gateway.models.SessionRequestModel;
 import edu.uci.ics.dtablac.service.gateway.models.SessionResponseModel;
@@ -12,12 +9,8 @@ import edu.uci.ics.dtablac.service.gateway.threadpool.ClientRequest;
 import edu.uci.ics.dtablac.service.gateway.threadpool.HTTPMethod;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
-import javax.ws.rs.POST;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Map;
 import java.util.Set;
 
 public class utility {
@@ -35,6 +28,9 @@ public class utility {
         String endpoint = request.getEndpoint();
 
         Response response = null;
+
+        ServiceLogger.LOGGER.info("Worker is handling email: "+email);
+        ServiceLogger.LOGGER.info("Worker is handling sesh_id: "+session_id);
 
         // Send the appropriate HTTP request
         if (method.equals(HTTPMethod.POST)) {
@@ -61,8 +57,9 @@ public class utility {
 
         // if path starts with /idm
         IdmConfigs idmConfigs = GatewayService.getIdmConfigs();
-        String servicePath = idmConfigs.getScheme()+idmConfigs.getHostName()+":"+idmConfigs.getPort()+"/api/idm";
+        String servicePath = idmConfigs.getScheme()+idmConfigs.getHostName()+":"+idmConfigs.getPort()+idmConfigs.getPath();
         String endpointPath = idmConfigs.getSessionPath();
+        ServiceLogger.LOGGER.warning(servicePath+endpointPath);
 
         // Create a new client
         ServiceLogger.LOGGER.info("Building client...");
@@ -77,32 +74,14 @@ public class utility {
         ServiceLogger.LOGGER.info("Starting invocation builder...");
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
 
+        ServiceLogger.LOGGER.warning(requestModel.getEMAIL()+"  "+requestModel.getSESSION_ID());
+
         // Send the request
         ServiceLogger.LOGGER.info("Sending request...");
         Response response = invocationBuilder.post(Entity.entity(requestModel, MediaType.APPLICATION_JSON));
         ServiceLogger.LOGGER.info("Request sent.");
 
-        ServiceLogger.LOGGER.info("Received status " + response.getStatus());
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            String jsonText = response.readEntity(String.class);
-            responseModel = mapper.readValue(jsonText, SessionResponseModel.class);
-            ServiceLogger.LOGGER.info("Successfully mapped session validation response to POJO.");
-
-            if (responseModel.getRESULTCODE() != 130) {
-                Response.ResponseBuilder builder = Response.status(response.getStatus()).entity(responseModel);
-                builder.header("email", EMAIL);
-                builder.header("session_id", SESSION_ID);
-                builder.header("transaction_id", TRANSACTION_ID);
-
-                return builder.build();
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            ServiceLogger.LOGGER.warning("Unable to map session validation response to POJO.");
-        }
-        return null; // Session is good.
+        return response; // session good. get sesh_id
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,6 +89,8 @@ public class utility {
     public static Response POSTRequest(String servicePath, String endpointPath, String EMAIL,
                                        String SESSION_ID, String TRANSACTION_ID, byte[] jsonBytes) {
 
+        ServiceLogger.LOGGER.warning("THIS GUY HAS EMAIL" +EMAIL);
+
         // Create a new client
         ServiceLogger.LOGGER.info("Building client...");
         Client client = ClientBuilder.newClient();
@@ -122,13 +103,13 @@ public class utility {
         // Create an InvocationBuilder to create the HTTP request (bundle request)
         ServiceLogger.LOGGER.info("Starting invocation builder...");
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+        invocationBuilder.header("email", EMAIL);
+        invocationBuilder.header("session_id", SESSION_ID);
+        invocationBuilder.header("transaction_id", TRANSACTION_ID);
 
         // Send the request
         ServiceLogger.LOGGER.info("Sending request...");
         Response response = invocationBuilder.post(Entity.entity(jsonBytes, MediaType.APPLICATION_JSON));
-        invocationBuilder.header("email", EMAIL);
-        invocationBuilder.header("session_id", SESSION_ID);
-        invocationBuilder.header("transaction_id", TRANSACTION_ID);
         ServiceLogger.LOGGER.info("Request sent.");
 
         ServiceLogger.LOGGER.info("Received status " + response.getStatus());
